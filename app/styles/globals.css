@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("../../public/fonts/stylesheet.css");
+@import url("../../public/images/icons/icons.css");
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c7ced9;
+  border-radius: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.orderStepsLine {
+  animation: lineMoving 20s linear infinite;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after{
+  visibility: hidden !important;
+}
+
+.swiper-button-prev::after, .swiper-rtl .swiper-button-next::after, .swiper-button-next::after, .swiper-rtl .swiper-button-prev::after{
+  content: '' !important;
+}
+
+#react-select-83-placeholder{
+  font-size: 13px !important;
+  width: 100%;
+}
+
+@keyframes lineMoving {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}

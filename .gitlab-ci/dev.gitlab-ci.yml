@@ -1,0 +1,51 @@
+build-klodx-ui-dev:
+  stage: build
+  environment:
+    name: DEV
+    url: https://klodx-ui-dev.bitcofe.com
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - env | grep 'KLODX_' | sed 's/KLODX_//' > variables.env
+    - docker pull $CI_REGISTRY_IMAGE:dependencies-latest
+    - docker build --target builder-stage -t $CI_REGISTRY_IMAGE:dev-$CI_PIPELINE_ID .
+  only:
+    refs:
+      - dev
+  tags: 
+    - runner-server-01-shell
+
+release-klodx-ui-dev:
+  stage: release
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker tag $CI_REGISTRY_IMAGE:dev-$CI_PIPELINE_ID $CI_REGISTRY_IMAGE:dev-latest
+    - docker push $CI_REGISTRY_IMAGE:dev-$CI_PIPELINE_ID
+    - docker push $CI_REGISTRY_IMAGE:dev-latest
+  tags: 
+    - runner-server-01-shell
+
+deliver-klodx-ui-dev:
+  stage: deliver
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:dev-$CI_PIPELINE_ID
+  tags: 
+    - klodx-dev-shell
+
+deploy-klodx-ui-dev:
+  stage: deploy
+  environment:
+    name: DEV
+    url: https://klodx-ui-dev.bitcofe.com
+  script:
+    - echo "DEPLOY_NAME=dev" > .env
+    - echo "TAG_NAME=dev-${CI_PIPELINE_ID}" >> .env
+    - echo "EXPOSED_PORT=${KLODX_EXPOSED_PORT}" >> .env
+    - env | grep 'KLODX_' | sed 's/KLODX_//' >> variables.env
+    - docker compose -f compose.yml up -d
+  tags:
+    - klodx-dev-shell
+  

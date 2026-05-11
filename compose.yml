@@ -1,0 +1,26 @@
+services:
+  klodx-ui-service:
+    image: gitlab-registry.bitcofe.com:443/hosting-frontend/hosting-frontend:${TAG_NAME}
+    container_name: klodx-ui-service
+    hostname: klodx-ui-service
+    env_file:
+      - variables.env
+    environment:
+      - TZ=Tehran-3:30
+      
+    restart: always
+    ports:
+    - ${EXPOSED_PORT}:3000
+    networks:
+      - ${DEPLOY_NAME}
+
+networks:
+  dev:
+    name: dev
+    external: true
+  stage:
+    name: stage
+    external: true
+  prod:
+    name: prod
+    external: true

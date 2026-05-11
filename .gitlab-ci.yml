@@ -1,0 +1,33 @@
+stages:
+  - installing-dependencies
+  - trigger
+
+include:
+  - local: .gitlab-ci/installing-dependencies.gitlab-ci.yml
+
+klodx-trigger-dev:
+  stage: trigger
+  trigger:
+    include: 
+      - '.gitlab-ci/general.gitlab-ci.yml'
+      - '.gitlab-ci/dev.gitlab-ci.yml'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+
+# klodx-trigger-stage:
+  # stage: trigger
+  # trigger:
+    # include: 
+      # - '.gitlab-ci/general.gitlab-ci.yml'
+      # - '.gitlab-ci/stage.gitlab-ci.yml'
+  # rules:
+    # - if: '$CI_COMMIT_BRANCH == "main"'
+
+# klodx-trigger-prod:
+  # stage: trigger
+  # trigger:
+    # include: 
+      # - '.gitlab-ci/general.gitlab-ci.yml'
+      # - '.gitlab-ci/prod.gitlab-ci.yml'
+  # rules:
+    # - if: '$CI_COMMIT_TAG =~ /^v/'

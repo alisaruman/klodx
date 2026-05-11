@@ -1,0 +1,211 @@
+i[class*="icon-"],
+i[class^="icon-"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+}
+
+.icon-sun {
+  background-image: url("mode/icon-sun.svg");
+}
+
+.icon-sun-active {
+  background-image: url("mode/icon-sun-active.svg");
+}
+
+.icon-moon {
+  background-image: url("mode/icon-moon.svg");
+}
+
+.icon-moon-active {
+  background-image: url("mode/icon-moon-active.svg");
+}
+
+.icon-system {
+  background-image: url("mode/icon-system.svg");
+}
+
+.icon-system-active {
+  background-image: url("mode/icon-system-active.svg");
+}
+
+.icon-speed {
+  background-image: url("landing/icon-speed.svg");
+}
+
+.icon-secure {
+  background-image: url("landing/icon-secure.svg");
+}
+
+.icon-cloud {
+  background-image: url("landing/icon-cloud.svg");
+}
+
+.icon-select {
+  background-image: url("landing/icon-select.svg");
+}
+
+.icon-landing-signup {
+  background-image: url("landing/icon-landing-signup.svg");
+}
+
+.icon-www {
+  background-image: url("landing/icon-www.svg");
+}
+
+.icon-chevron-right {
+  background-image: url("landing/icon-chevron-right.svg");
+}
+
+.icon-telegram {
+  background-image: url("landing/icon-telegram.svg");
+}
+
+.icon-whatsapp {
+  background-image: url("landing/icon-whatsapp.svg");
+}
+
+.icon-x {
+  background-image: url("landing/icon-x.svg");
+}
+
+.icon-mail {
+  background-image: url("landing/icon-mail.svg");
+}
+
+.icon-phone {
+  background-image: url("landing/icon-phone.svg");
+}
+
+.icon-hamburger {
+  background-image: url("header-mobile/icon-hamburger.svg");
+}
+
+.icon-profile {
+  background-image: url("header-mobile/icon-profile.svg");
+}
+
+.icon-password {
+  background-image: url("global/icon-password.svg");
+}
+
+.icon-alert-warning {
+  background-image: url("global/icon-alert-warning.svg");
+}
+
+.icon-alert-warning-dark {
+  background-image: url("global/icon-alert-warning-dark.svg");
+}
+
+.icon-alert-error {
+  background-image: url("global/icon-alert-error.svg");
+}
+
+.icon-alert-error-dark {
+  background-image: url("global/icon-alert-error-dark.svg");
+}
+
+.icon-alert-success {
+  background-image: url("global/icon-alert-success.svg");
+}
+
+.icon-alert-success-dark {
+  background-image: url("global/icon-alert-success-dark.svg");
+}
+
+.icon-profile {
+  background-image: url("global/icon-profile.svg");
+}
+
+.icon-logout {
+  background-image: url("global/icon-logout.svg");
+}
+
+.icon-analytics {
+  background-image: url("dashboard/icon-analytics.svg");
+}
+
+.icon-home {
+  background-image: url("dashboard/icon-home.svg");
+}
+
+.icon-server {
+  background-image: url("dashboard/icon-server.svg");
+}
+
+.icon-setting {
+  background-image: url("dashboard/icon-setting.svg");
+}
+
+.icon-support {
+  background-image: url("dashboard/icon-support.svg");
+}
+
+.icon-plus {
+  background-image: url("global/icon-plus.svg");
+}
+
+.icon-wallet {
+  background-image: url("global/icon-wallet.svg");
+}
+
+.icon-data-centers {
+  background-image: url("buying-server-stepper/icon-data-centers.svg");
+}
+
+.icon-os {
+  background-image: url("buying-server-stepper/icon-os.svg");
+}
+
+.icon-resize-four-directions {
+  background-image: url("buying-server-stepper/icon-resize-four-directions.svg");
+}
+
+.icon-subscription {
+  background-image: url("buying-server-stepper/icon-subscription.svg");
+}
+
+.icon-final-settings {
+  background-image: url("buying-server-stepper/icon-final-settings.svg");
+}
+
+.icon-magnifier {
+  background-image: url("buying-server-stepper/icon-magnifier.svg");
+}
+
+.icon-tick {
+  background-image: url("buying-server-stepper/icon-tick.svg");
+}
+
+.icon-question {
+  background-image: url("global/icon-question.svg");
+}
+
+.icon-key {
+  background-image: url("dashboard/icon-key.svg");
+}
+
+.icon-network {
+  background-image: url("dashboard/icon-network.svg");
+}
+
+.icon-edit {
+  background-image: url("dashboard/icon-edit.svg");
+}
+
+.icon-credit-card {
+  background-image: url("buying-server-stepper/icon-credit-card.svg");
+}
+
+.icon-voucher-checked {
+  background-image: url("global/icon-voucher-checked.svg");
+}
+
+.icon-notifications {
+  background-image: url("global/icon-notifications.svg");
+}
+
+.icon-close {
+  background-image: url("global/icon-close.svg");
+}
