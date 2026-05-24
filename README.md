@@ -1,226 +1,172 @@
 <div align="center">
 
-# Klodx ☁️
+# HC / Klodx ☁️
 
-### Persian Cloud Server Management Platform for Hetzner Infrastructure
+### Persian cloud server dashboard built with Next.js
 
-A modern cloud infrastructure management platform that enabled Iranian users to rent and manage Hetzner datacenter servers using localized Persian workflows and Rial payment systems.
-
-Built as a scalable frontend dashboard for infrastructure provisioning, server management, and cloud resource handling.
+A localized frontend for browsing cloud server packages in Hetzner datacenter (Germany), configuring a server, creating invoices, charging a wallet, and handling user authentication/support flows.
 
 <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js" />
 <img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react" />
+<img src="https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript" />
 <img src="https://img.shields.io/badge/Redux-Toolkit-purple?style=for-the-badge&logo=redux" />
-<img src="https://img.shields.io/badge/ChakraUI-319795?style=for-the-badge&logo=chakraui" />
-<img src="https://img.shields.io/badge/Cloud-Infrastructure-success?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Chakra_UI-319795?style=for-the-badge&logo=chakraui" />
 
 </div>
 
 ---
 
-# 📌 Overview
+## Overview
 
-**Klodx** is a Persian cloud infrastructure management platform designed to simplify server provisioning workflows for Iranian users using Hetzner datacenter infrastructure in Germany.
+This repository is a **Next.js App Router** project for a Persian cloud hosting dashboard. The app is focused on the frontend experience and connects to a backend through `PUBLIC_BACKEND_API`.
 
-The platform allowed users to:
+The current implementation includes:
 
-- Browse available servers
-- Configure infrastructure details
-- Select operating systems
-- Manage rented servers
-- Monitor server activity
-- Pay using localized Rial payment workflows
-
-The project focused on building a scalable SaaS-style cloud dashboard with production-grade frontend architecture and a localized user experience.
-
----
-
-# ✨ Core Features
-
-## ☁️ Server Provisioning
-
-- Browse available server plans
-- Configure server specifications
-- Select operating systems
-- Choose OS versions & configurations
-- Infrastructure setup workflows
-
-## 🖥️ Server Management
-
-- Active server monitoring
-- Server detail visualization
-- Resource information display
-- Server status handling
-- Log & activity tracking
-
-## 💳 Localized Payment Workflow
-
-- Rial-based payment handling
-- Persian user experience
-- Localized infrastructure purchasing flow
-
-## 👤 User Dashboard
-
-- Manage rented servers
-- Infrastructure overview
-- Account management
-- Service interaction workflows
+- Landing page sections for product introduction, plans, testimonials, and datacenter map visuals
+- Register, login, OTP verification, password reset, and complete-profile flows
+- Auth sessions through **NextAuth credentials provider**
+- Dashboard shell with sidebar/subheader navigation
+- Cloud server purchase stepper: location, OS image, package size, final settings, and review/payment
+- Wallet charge, voucher check, bank gateway URL, and pay-by-wallet integrations
+- Ticket list, ticket details, new ticket, and ticket message flows
+- Chakra UI theme customization with Persian typography and RTL-oriented UI content
 
 ---
 
-# 🧱 Tech Stack
+## Tech Stack
 
-## Core Technologies
-
-| Technology    | Purpose                 |
-| ------------- | ----------------------- |
-| Next.js 14    | Frontend framework      |
-| React 18      | UI architecture         |
-| TypeScript    | Type safety             |
-| Redux Toolkit | Global state management |
-
----
-
-## UI & Design System
-
-| Technology          | Purpose               |
-| ------------------- | --------------------- |
-| Chakra UI           | Component system      |
-| Framer Motion       | UI animations         |
-| Swiper              | Interactive sliders   |
-| Chakra React Select | Advanced selection UI |
+| Technology                | Usage                                                      |
+| ------------------------- | ---------------------------------------------------------- |
+| Next.js 14                | App Router, pages, middleware, API auth route              |
+| React 18                  | Client-side UI components                                  |
+| TypeScript                | Type-safe app code and API contracts                       |
+| Chakra UI                 | Component system and custom theme foundation               |
+| Redux Toolkit + RTK Query | API services, cache/middleware setup, create-server state  |
+| React Redux               | Store provider and typed hooks                             |
+| NextAuth v5               | Credentials login and session management                   |
+| Formik + Zod              | Forms and validation schemas                               |
+| Chakra React Select       | OS/image select UI                                         |
+| Framer Motion             | Chakra UI animation dependency                             |
+| Swiper                    | Testimonials slider                                        |
+| Persian Tools             | Persian utilities and formatting support                   |
+| Tailwind CSS              | Configured in the project, while UI is mainly Chakra-based |
 
 ---
 
-## Forms & Validation
+## Main Routes
 
-| Technology         | Purpose                |
-| ------------------ | ---------------------- |
-| Formik             | Form management        |
-| Zod                | Schema validation      |
-| Zod Formik Adapter | Validation integration |
+| Route                            | Purpose                                             |
+| -------------------------------- | --------------------------------------------------- |
+| `/`                              | Landing page                                        |
+| `/login`                         | Login and forgot-password entry                     |
+| `/login/new-password`            | Password reset form                                 |
+| `/register`                      | User registration and OTP verification              |
+| `/complete-profile`              | Complete user profile data                          |
+| `/dashboard`                     | Dashboard overview with static summary cards/log UI |
+| `/dashboard/cloud-server`        | Cloud server creation flow                          |
+| `/dashboard/ticket`              | Support tickets                                     |
+| `/dashboard/ticket/new`          | Create support ticket                               |
+| `/dashboard/cart/payment/result` | Payment result screen                               |
+| `/api/auth/[...nextauth]`        | NextAuth route handlers                             |
 
----
-
-## Localization & Persian Support
-
-| Technology    | Purpose                        |
-| ------------- | ------------------------------ |
-| Persian Tools | Persian utilities & formatting |
-
----
-
-# 🏗️ Architecture Highlights
-
-Klodx was engineered as a scalable dashboard-style application using modern frontend architecture principles:
-
-- Modular component structure
-- Reusable dashboard systems
-- Feature-driven organization
-- Type-safe frontend workflows
-- Centralized state management
-- Scalable form architecture
-- Maintainable UI systems
-
-The application structure was designed to support future cloud-management feature expansion.
+`/dashboard/settings` and `/dashboard/analytics` are present in the sidebar config but are currently marked as disabled links.
 
 ---
 
-# ⚡ Product & UX Focus
+## Backend Integration
 
-The project focused heavily on simplifying technically complex workflows for end users.
-
-Main UX goals included:
-
-- Simplified infrastructure purchasing
-- Clear server configuration flow
-- Minimal dashboard complexity
-- Readable infrastructure data
-- Responsive management interface
-- Localized Persian experience
-
----
-
-# 🌍 Localization & Regional Experience
-
-One of the key aspects of the platform was adapting cloud infrastructure workflows for Persian-speaking users.
-
-This included:
-
-- Persian-oriented UI workflows
-- Rial payment support
-- Localized formatting
-- User-friendly onboarding experience
-
-The goal was making international infrastructure services more accessible to regional users.
-
----
-
-# 📊 Infrastructure-Oriented Dashboard
-
-The dashboard experience focused on:
-
-- Server lifecycle visibility
-- Infrastructure detail management
-- Resource monitoring
-- Activity & log visualization
-- Service management workflows
-
-This required balancing large amounts of technical information with clean usability.
-
----
-
-# 📁 Project Structure
+All RTK Query services share `app/redux/services/base.ts`, which builds requests from:
 
 ```bash
-src/
-├── app/                # Next.js app router
-├── components/         # Shared UI components
-├── modules/            # Feature-based modules
-├── store/              # Redux store
-├── hooks/              # Custom hooks
-├── services/           # API & infrastructure logic
-├── layouts/            # Dashboard layouts
-├── utils/              # Utility functions
-├── types/              # TypeScript definitions
-├── constants/          # Static constants
-└── styles/             # Styling system
+PUBLIC_BACKEND_API + "api/v1"
+```
+
+Authenticated requests attach the session access token as a Bearer token.
+
+Implemented API areas:
+
+- `authApi`: register, verify OTP, complete profile, reset password, get current user
+- `serverPackageApi`: server packages, locations, images, SSH keys, server invoice creation, wallet payment, bank gateway URL, voucher check
+- `paymentApi`: wallet information
+- `invoicesApi`: wallet charge, bank gateway URL, voucher check
+- `ticketsApi`: create ticket, list tickets, ticket detail, ticket messages
+
+---
+
+## Project Structure
+
+```bash
+hc/
+├── app/
+│   ├── api/auth/[...nextauth]/     # NextAuth route handler
+│   ├── components/                 # Landing, auth, and shared app components
+│   ├── complete-profile/           # Complete-profile page
+│   ├── dashboard/                  # Dashboard, cloud-server, payment, and ticket pages
+│   ├── login/                      # Login and reset-password pages/components
+│   ├── redux/                      # Store, RTK Query services, and create-server slice
+│   ├── register/                   # Register page/components
+│   ├── styles/                     # Global CSS
+│   ├── themes/                     # Chakra theme foundation and component variants
+│   ├── types/                      # NextAuth type augmentation
+│   ├── utils/constants/            # Dashboard links and Persian digit helper
+│   ├── layout.tsx                  # Root layout
+│   ├── page.tsx                    # Landing page
+│   ├── providers.tsx               # Chakra, Redux, and session providers
+│   └── validationSchema.ts         # Zod validation schemas
+├── components/ui/                  # Extra generated UI primitives
+├── public/                         # Fonts, icons, and images
+├── .gitlab-ci/                     # GitLab CI includes
+├── auth.ts                         # NextAuth credentials configuration
+├── middleware.ts                   # Route protection middleware
+├── next.config.mjs                 # Next.js environment config
+├── tailwind.config.ts              # Tailwind config
+├── Dockerfile                      # Production container build
+├── compose.yml                     # Docker Compose service definition
+└── package.json                    # Scripts and dependencies
 ```
 
 ---
 
-# 🚀 Getting Started
+## Environment Variables
 
-## Installation
+Create a local env file such as `.env.local`:
 
 ```bash
-git clone <repository-url>
+PUBLIC_BACKEND_API=https://your-backend.example.com/
+AUTH_SECRET=your-auth-secret
+```
 
-cd hc
+Notes:
 
+- `auth.ts` posts credentials to `${PUBLIC_BACKEND_API}/api/v1/auth/login-password/`.
+- RTK Query requests use `PUBLIC_BACKEND_API + "api/v1"`; keep the trailing slash behavior consistent with your backend URL.
+
+---
+
+## Getting Started
+
+### Install
+
+```bash
 npm install
 ```
 
----
-
-## Development
+### Development
 
 ```bash
 npm run dev
 ```
 
----
+Open `http://localhost:3000`.
 
-## Production Build
+### Production Build
 
 ```bash
 npm run build
 npm run start
 ```
 
----
-
-## Linting
+### Lint
 
 ```bash
 npm run lint
@@ -228,75 +174,39 @@ npm run lint
 
 ---
 
-# 🧪 Engineering Highlights
+## Docker
 
-This project demonstrates expertise in:
+The repository includes a production `Dockerfile` and a `compose.yml` that runs a prebuilt GitLab registry image.
 
-- SaaS dashboard applications
-- Cloud infrastructure interfaces
-- Complex management workflows
-- React dashboard architecture
-- Type-safe frontend development
-- Scalable state management
-- Localization-focused UX
-- Infrastructure visualization systems
-- Enterprise frontend engineering
+Build the app image manually:
 
----
+```bash
+docker build -t hc .
+```
 
-# 🎯 Why This Project Matters
+Run the configured Compose service:
 
-Klodx was not just a server listing UI.
+```bash
+TAG_NAME=your-tag EXPOSED_PORT=3000 DEPLOY_NAME=dev docker compose up
+```
 
-It represented:
-
-- Real-world cloud management workflows
-- Infrastructure-focused frontend engineering
-- Dashboard scalability challenges
-- Technical product UX simplification
-- Localized SaaS platform development
-
-The project demonstrates the ability to build scalable and maintainable frontend systems for technically complex domains.
+The Compose service expects `variables.env` and external Docker networks named `dev`, `stage`, or `prod`.
 
 ---
 
-# 👨‍💻 About The Developer
+## Current Notes
 
-I am a frontend engineer focused on building scalable, maintainable, and production-grade applications using modern frontend technologies.
-
-My expertise includes:
-
-- React ecosystem
-- Next.js architecture
-- TypeScript
-- SaaS dashboard systems
-- Frontend scalability
-- Cloud management interfaces
-- UI engineering
-- Performance optimization
-
-I enjoy building products that combine strong architecture with excellent usability.
+- Most UI text is Persian and the dashboard is designed for a localized cloud hosting workflow.
+- The dashboard overview contains some static placeholder values, while cloud-server, wallet, invoice, auth, and ticket areas are wired to API services.
+- The project uses Chakra UI as the primary styling system; Tailwind is configured but is not the main component styling approach.
+- The app name in `package.json` is `hc`, while the product branding shown in the UI/README is `Klodx`.
 
 ---
 
-# 📬 Contact
+## Developer
 
-### GitHub
+Ali Heydari
 
-[github.com/alisaruman](https://github.com/alisaruman)
-
-### LinkedIn
-
-[Ali Heydari LinkedIn](https://www.linkedin.com/in/ali-h3ydari)
-
-### Email
-
-a.heydari.dev@gmail.com
-
----
-
-<div align="center">
-
-### Built with scalable frontend architecture, dashboard engineering principles, and infrastructure-focused UX.
-
-</div>
+- GitHub: [github.com/alisaruman](https://github.com/alisaruman)
+- LinkedIn: [Ali Heydari](https://www.linkedin.com/in/ali-h3ydari)
+- Email: a.heydari.dev@gmail.com
